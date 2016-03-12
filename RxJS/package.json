@@ -1,0 +1,27 @@
+{
+  "name": "rxjs-talk",
+  "version": "1.0.0",
+  "description": "RxJS talk",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattiaocchiuto/talks/tree/master/RxJS"
+  },
+  "keywords": [
+    "rxjs",
+    "functional",
+    "javascript",
+    "reactive"
+  ],
+  "author": "mattia occhiuto <occhiutomattia@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "rx": "^4.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.6.5"
+  }
+}
