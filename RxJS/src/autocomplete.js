@@ -17,18 +17,22 @@
     var $input = $('#textInput');
     var $results = $('#results');
 
-    // Get all distinct key up events from the input and only fire if long enough and distinct
     var keyup = Rx.Observable.fromEvent($input, 'keyup')
       .map(function (e) {
-        return e.target.value; // Project the text from the input
+        return e.target.value;
       })
       .filter(function (text) {
-        return text.length > 2; // Only if the text is longer than 2 characters
+        return text.length > 2;
       })
-      .debounce(750 /* Pause for 750ms */ )
-      .distinctUntilChanged(); // Only if the value has changed
+      // Passa il valore se tra un valore e l'altro è presente una pausa di almeno 750 ms
+      .debounce(750)
+      // Solo se il valore è cambiato
+      .distinctUntilChanged();
 
-    var searcher = keyup.flatMapLatest(searchWikipedia);
+    var searcher = keyup
+    // Come flatMap ma non appena l'observable passato alla flat ritorna un nuovo
+    // observable si viene disiscritti da quello precedente.
+      .flatMapLatest(searchWikipedia);
 
     searcher.subscribe(
       function (data) {
