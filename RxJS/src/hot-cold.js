@@ -3,26 +3,32 @@ var Rx = require('rx');
 var source = Rx.Observable
     .interval(300)
     .take(5)
-    .map(function (x) {return x + 1});
+    .map(function (x) {
+      return x + 1
+    });
 
-var published = source
-    //.publish().refCount();
-    //.shareReplay(5);
-    //.shareValue();
-    .publish();
+var coldObservable = source;
 
+var sharedObservable = source.share();
+
+var hotObservable = source.publish();
 // chiamato dopo averlo pubblicato con publish.
-published.connect();
+hotObservable.connect();
 
-//var subscriptionA = published.subscribe(createObserver('A '));
+// Primo Subscriber.
+var subscriptionA = hotObservable.subscribe(createObserver('A '));
 
-setTimeout(function () {
-  //Rx.Observable
-    //.return(true)
-    //.delay(1000)
-    //.concatMap(published)
-    published.subscribe(createObserver('      B '));
-  }, 1000);
+subscriptionA.dispose();
+
+var delayedObservable = Rx.Observable
+  .just(true)
+  .delay(1000)
+  .concatMap(hotObservable);
+
+// Secondo Subscriber.
+var subscriptionB = delayedObservable.subscribe(createObserver('      B '));
+
+
 
 function createObserver(tag) {
   return Rx.Observer.create(
