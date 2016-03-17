@@ -9,6 +9,9 @@ var source = Rx.Observable.fromPromise(ajax)
   })
   .filter(function (elem) {
     return elem.price < 50;
+  })
+  .map(function (filtered) {
+    return filtered.type;
   });
 
 var subscription1 = source.subscribe(

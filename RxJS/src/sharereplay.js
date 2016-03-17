@@ -8,15 +8,21 @@ var source = Rx.Observable
 var published = source
     //.publish().refCount();
     //.shareReplay(5);
-    .shareValue(3);
+    //.shareValue();
+    .publish();
 
-published.subscribe(createObserver('A '));
+// chiamato dopo averlo pubblicato con publish.
+published.connect();
 
-Rx.Observable
-    .return(true)
-    .delay(1000)
-    .flatMap(published)
-    .subscribe(createObserver('      B '));
+//var subscriptionA = published.subscribe(createObserver('A '));
+
+setTimeout(function () {
+  //Rx.Observable
+    //.return(true)
+    //.delay(1000)
+    //.concatMap(published)
+    published.subscribe(createObserver('      B '));
+  }, 1000);
 
 function createObserver(tag) {
   return Rx.Observer.create(

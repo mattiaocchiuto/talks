@@ -25,7 +25,7 @@
         return text.length > 2;
       })
       // Passa il valore se tra un valore e l'altro è presente una pausa di almeno 750 ms
-      .debounce(750)
+      .debounce(200)
       // Solo se il valore è cambiato
       .distinctUntilChanged();
 

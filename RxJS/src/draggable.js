@@ -1,17 +1,3 @@
-// ********************************************
-// ********** ESEMPIO GENERICO CLICK **********
-// ********************************************
-var button = document.querySelector('#testButton');
-
-var buttonClick = Rx.Observable.fromEvent(button, 'click')
-  .map(function (e) {
-    return e.target;
-  });
-
-buttonClick.subscribe(function (e) {
-  console.log(e);
-});
-
 // ***********************************
 // ********** ESEMPIO MOUSE **********
 // ***********************************
