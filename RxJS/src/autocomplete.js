@@ -2,15 +2,17 @@
 
   // Search Wikipedia for a given term
   function searchWikipedia(term) {
-    return $.ajax({
-      url: 'http://en.wikipedia.org/w/api.php',
-      dataType: 'jsonp',
-      data: {
-        action: 'opensearch',
-        format: 'json',
-        search: term
-      }
-    }).promise();
+    return function () {
+      return $.ajax({
+        url: 'http://en.wikipedia.org/w/api.php',
+        dataType: 'jsonp',
+        data: {
+          action: 'opensearch',
+          format: 'json',
+          search: term
+        }
+      });
+    }
   }
 
   function main() {
@@ -30,9 +32,17 @@
       .distinctUntilChanged();
 
     var searcher = keyup
-    // Come flatMap ma non appena l'observable passato alla flat ritorna un nuovo
-    // observable si viene disiscritti da quello precedente.
-      .flatMapLatest(searchWikipedia);
+      // Come flatMap ma non appena l'observable passato alla flat ritorna un nuovo
+      // observable si viene disiscritti da quello precedente.
+      .flatMapLatest((x) => {
+        return Rx.Observable.fromPromise(searchWikipedia(x))
+          //.retry(3)
+          .retryWhen((error) => {
+            return navigator.onLine ?
+              Rx.Observable.timer(3000) :
+              Rx.Observable.fromEvent(window, 'online').take(1);
+          });
+      });
 
     searcher.subscribe(
       function (data) {

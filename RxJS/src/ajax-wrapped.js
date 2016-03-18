@@ -14,9 +14,9 @@ function createAjaxObservable(url) {
       observer.onError(e);
     });
 
-  return function () {
-    connection.destroy();
-  }
+    return function () {
+      connection.destroy();
+    }
   });
 }
 
