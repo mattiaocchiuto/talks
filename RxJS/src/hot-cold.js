@@ -16,18 +16,17 @@ var hotObservable = source.publish();
 hotObservable.connect();
 
 // Primo Subscriber.
-var subscriptionA = hotObservable.subscribe(createObserver('A '));
+var subscriptionA = sharedObservable.subscribe(createObserver('A '));
 
-subscriptionA.dispose();
+// subscriptionA.dispose();
 
 var delayedObservable = Rx.Observable
   .just(true)
   .delay(1000)
-  .concatMap(hotObservable);
+  .concatMap(sharedObservable);
 
 // Secondo Subscriber.
 var subscriptionB = delayedObservable.subscribe(createObserver('      B '));
-
 
 
 function createObserver(tag) {

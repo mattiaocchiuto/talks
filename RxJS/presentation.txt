@@ -1,25 +1,8 @@
-#1
-######## WHAT IS ########
-...is a set of libraries to compose asynchronous and event-based programs using observable collections
-and Array#extras style composition in JavaScript.
+Esempi:
 
-Project actively developed by Microsoft, in collaboration with a community of open source developers.
-
-
-#2
-####### WHY #######
-Modern websites are not anymore static page with simple animation but are complex system
-composed of asynchronous flows that interacting transform our simple website to complex web application.
-
-Promise, web-workers, web-sockets, DOM-events, infrastructure synchronization: are all sources of async data
-that could be viewed as a single data model => Stream of data.
-
-In order to manage multiple asynchronous flows we need a more approchable data structure that give us
-the strength to build systems that will be: event/message-driven, resilient, scalable, responsive.
-
-We are going to call this kind of systems "Reactive Architectures".
-
->>>>>>> Image regarding the two axes with single/multiple/promise/observable <<<<<<<<<
-
-#3
-###### HOW ######
+1) first-example.js
+2) second-example.js
+3) ajax-wrapped.js
+4) hot-cold.js
+5) draggable.js
+6) autocomplete.js

@@ -1,15 +1,13 @@
 var Rx = require('rx');
 
-var array = [1,2,3];
-
 // *******************************
 // ************ ZIP **************
 // *******************************
-var zipSource = Rx.Observable
-  .fromArray(array)
+var array = [1,2,3];
+var zipSource = Rx.Observable.fromArray(array)
   .zip(
     Rx.Observable.interval(1000),
-    function (first, second) {return first;}
+    (first, second) => first
   );
 
 //zipSource.subscribe(createObserver('A'));
@@ -17,9 +15,7 @@ var zipSource = Rx.Observable
 // ***********************************
 // ************ FLATMAP **************
 // ***********************************
-var flatMapSource = Rx.Observable
-  .interval(1000)
-  .take(10)
+var flatMapSource = Rx.Observable.interval(1000).take(10)
   .flatMap(function (index) {
     return Rx.Observable
       .interval(500)
@@ -27,14 +23,7 @@ var flatMapSource = Rx.Observable
       .map(function (x) {return index + ' ' + x})
     });
 
-//flatMapSource.subscribe(createObserver('A'));
-
-/*var firstObserver = createObserver('A');
-setTimeout(undefined, 1000);
-var secondObserver = createObserver('B');
-
-source.subscribe(firstObserver);
-source.subscribe(secondObserver);*/
+// flatMapSource.subscribe(createObserver('A'));
 
 // ***********************************
 // ************ CONCATMAP ************
@@ -50,13 +39,6 @@ var concatMapSource = Rx.Observable.range(0, 5)
   });
 
 //concatMapSource.subscribe(createObserver('A'));
-
-Rx.Observable.fromArray([1,2,3])
-  .zip(Rx.Observable.interval(1000))
-  .subscribe(function (x) {
-    console.log(x);
-  })
-
 
 // *************************************
 // ********* OBSERVER GENERICO *********

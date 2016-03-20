@@ -14,7 +14,7 @@ var source = Rx.Observable.fromPromise(ajax)
     return filtered.type;
   });
 
-var subscription1 = source.subscribe(
+var subscription = source.subscribe(
   function (x) {
     console.log('Next: ' + x);
   },

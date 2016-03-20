@@ -1,6 +1,3 @@
-// ***********************************
-// ********** ESEMPIO MOUSE **********
-// ***********************************
 var draggable = document.querySelector('#draggable');
 var draggableContainer = document.querySelector('#draggableContainer');
 
