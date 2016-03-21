@@ -23,7 +23,7 @@ function createAjaxObservable(url) {
 var ajaxObservable = createAjaxObservable('http://localhost:3000')
   .map(resp => JSON.parse(resp))
   .concatMap(elems => Rx.Observable.fromArray(elems))
-  .filter(elem => elem.price < 50);
+  .filter(elem => elem.price > 50);
 
 var subscription = ajaxObservable.subscribe(
   function (data) {
@@ -37,4 +37,4 @@ var subscription = ajaxObservable.subscribe(
   }
 );
 
-subscription.dispose();
+//subscription.dispose();

@@ -16,14 +16,14 @@ var hotObservable = source.publish();
 hotObservable.connect();
 
 // Primo Subscriber.
-var subscriptionA = sharedObservable.subscribe(createObserver('A '));
+//var subscriptionA = sharedObservable.subscribe(createObserver('A '));
 
 // subscriptionA.dispose();
 
 var delayedObservable = Rx.Observable
   .just(true)
   .delay(1000)
-  .concatMap(sharedObservable);
+  .concatMap(hotObservable); 
 
 // Secondo Subscriber.
 var subscriptionB = delayedObservable.subscribe(createObserver('      B '));

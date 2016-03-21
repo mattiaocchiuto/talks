@@ -41,7 +41,7 @@
       .share();
 
     var searcher = keyup
-      // Come flatMap ma mantiene solo l'ultimo.
+      // Come flatMap ma mantiene solo l'ultimo observable.
       .flatMapLatest((term) => {
         return Rx.Observable.fromPromise(searchWikipedia(term))
           .retryWhen((error) => {

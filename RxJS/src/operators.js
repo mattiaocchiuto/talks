@@ -13,7 +13,7 @@ var zipSource = Rx.Observable.fromArray(array)
     (first, second) => first
   );
 
-// zipSource.subscribe(createObserver('A'));
+//zipSource.subscribe(createObserver('A'));
 
 // ***********************************
 // ************ FLATMAP **************

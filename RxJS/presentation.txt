@@ -1,6 +1,6 @@
 Esempi:
 
-1) basic.js         -> observable creation
+1) basic.js         -> observable creation . NO
 2) operators.js     -> some merging operators
 3) ajax-wrapped.js  -> create your own Observable
 4) hot-cold.js      -> difference between two type of Observable
@@ -8,13 +8,6 @@ Esempi:
 6) autocomplete.js  -> retry focus
 
 #TODO
-- Observable: any number of values over any amount of time
- => we can represent values over time as a collection
-
- collection today = iterable, collection tomorrow = Observable
-  => observable as first class citizen => everything is an observable
-
-- Cerca disegno diagramma cartesiano observable
 - Metti uno schema murbles
 - Metti a posto esempio draggable in modo che non si rompa
 
