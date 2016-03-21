@@ -6,3 +6,9 @@ Esempi:
 4) hot-cold.js
 5) draggable.js
 6) autocomplete.js
+
+
+Observable: any number of values over any amount of time
+ => we can represent values over time as a collection
+
+ Cerca disegno diagramma cartesiano observable
