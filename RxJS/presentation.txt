@@ -7,8 +7,10 @@ Esempi:
 5) draggable.js
 6) autocomplete.js
 
-
-Observable: any number of values over any amount of time
+TODO
+- Observable: any number of values over any amount of time
  => we can represent values over time as a collection
 
- Cerca disegno diagramma cartesiano observable
+- Cerca disegno diagramma cartesiano observable
+
+- Metti link utili sia in slide finali che in readme.MD della pagina github
