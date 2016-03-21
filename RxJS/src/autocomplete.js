@@ -1,7 +1,7 @@
-(function (global, $, Rx) {
+(function (window, $, Rx) {
 
   function searchWikipedia(term) {
-    return function () {
+    return () => {
       return $.ajax({
         url: 'http://en.wikipedia.org/w/api.php',
         dataType: 'jsonp',
@@ -42,8 +42,8 @@
 
     var searcher = keyup
       // Come flatMap ma mantiene solo l'ultimo.
-      .flatMapLatest((x) => {
-        return Rx.Observable.fromPromise(searchWikipedia(x))
+      .flatMapLatest((term) => {
+        return Rx.Observable.fromPromise(searchWikipedia(term))
           .retryWhen((error) => {
             return navigator.onLine ?
               Rx.Observable.timer(3000) :
@@ -66,7 +66,7 @@
       (data) => {
         $results
           .empty()
-          .append ($.map(data[1], function (v) { return $('<li>').text(v); }));
+          .append ($.map(data[1], (v) => { return $('<li>').text(v); }));
       },
       (error) => {
         $results

@@ -10,6 +10,7 @@ var subscription = source.subscribe(subscriber);
 
 function createObserver(tag) {
  return Rx.Observer.create(
+
    function (x) {
      console.log('Next: ' + x);
    },
