@@ -3,7 +3,16 @@ This section is intended as support resource for my **My gentle introduction to 
 
 There are both node and browser examples, in order to try it locally you should download/fork/clone this repo and  run ```npm install``` in the RxJS directory.
 
-## External resources:
+## Examples summary
+1. basic.js
+2. operators.js
+3. basic-observable-wrap.js
+4. ajax-observable-wrap.js
+5. hot-cold.js
+6. draggable.js
+7. autocomplete.js
+
+## External resources
 ### Useful links:
 * [Official Rx website](http://reactivex.io/)
 * [RxJS github repo](https://github.com/Reactive-Extensions/RxJS)
