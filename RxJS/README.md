@@ -16,7 +16,3 @@
 * [Introduction to Functional Reactive Programming with RxJS](http://www.sitepoint.com/functional-reactive-programming-rxjs/)
 * [Online tutorial](http://reactivex.io/learnrx/)
 * [egghead Lessons](https://egghead.io/technologies/rx)
-### Video
-
-### Influent people:
-*
