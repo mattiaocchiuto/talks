@@ -1,5 +1,5 @@
-# Introduction to RxJS
-This section is intended as support resource for my **Introduction to RxJS**  talk, here you can find examples and [Slide](http://slides.com/mattiaocchiuto/an-introduction-to-rxjs/live).
+# My gentle introduction to RxJS
+This section is intended as support resource for my **My gentle introduction to RxJS**  talk, here you can find examples and [Slide](http://slides.com/mattiaocchiuto/an-introduction-to-rxjs/live).
 
 There are both node and browser examples, in order to try it locally you should download/fork/clone this repo and  run ```npm install``` in the RxJS directory.
 
