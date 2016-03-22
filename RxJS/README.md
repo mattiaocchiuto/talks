@@ -13,6 +13,7 @@
 * [Testing your Rx application](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/gettingstarted/testing.md)
 
 ### Articles & Tutorial
-* [Introduction to Functional Reactive Programming with RxJS](http://www.sitepoint.com/functional-reactive-programming-rxjs/)
+* [Introduction to Functional Reactive Programming with RxJS](http://www.sitepoint.com/functional-reactive-programming-rxjs/) by @FlorianRappl
+* [The introduction to Reactive Programming you've been missing](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754) by @andrestaltz
 * [Online tutorial](http://reactivex.io/learnrx/)
-* [egghead Lessons](https://egghead.io/technologies/rx)
+* [Egghead Lessons](https://egghead.io/technologies/rx)
