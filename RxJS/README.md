@@ -10,9 +10,12 @@
 * [Operators by categories](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/gettingstarted/categories.md)
 * [Online ebook](http://xgrommx.github.io/rx-book/index.html)
 * [Marbles diagram](http://rxmarbles.com/)
+* [Testing your Rx application](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/gettingstarted/testing.md)
 
-### Articles
-
+### Articles & Tutorial
+* [Introduction to Functional Reactive Programming with RxJS](http://www.sitepoint.com/functional-reactive-programming-rxjs/)
+* [Online tutorial](http://reactivex.io/learnrx/)
+* [egghead Lessons](https://egghead.io/technologies/rx)
 ### Video
 
 ### Influent people:
