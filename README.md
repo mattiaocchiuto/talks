@@ -2,4 +2,4 @@
 (by [@mattiaoch](https://twitter.com/MattiaOch))
 
 - - -
-- [My gentle introduction to RxJS](https://github.com/mattiaocchiuto/talks/tree/master/RxJS)
+- [My gentle introduction to RxJS](https://github.com/mattiaocchiuto/talks/tree/master/RxJS)[keywords: Javascript, RxJS, Observable, Reactive, Functional]
