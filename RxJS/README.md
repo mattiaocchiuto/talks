@@ -1,11 +1,7 @@
 # RxJS - talks
-This section is intended as support resource for my presentation about RxJS, here you can find examples and slide.
-- [Slide](http://slides.com/mattiaocchiuto/an-introduction-to-rxjs/live)
+This section is intended as support resource for my presentation about RxJS, here you can find examples and [Slide](http://slides.com/mattiaocchiuto/an-introduction-to-rxjs/live).
 
-There are both node and browser examples, in order to try it you have to run
-```sh
-npm install
-```
+There are both node and browser examples, in order to try it you have to run ```sh npm install``` in the RxJS directory.
 
 ## External resources:
 ### Useful links:
