@@ -1,7 +1,8 @@
-## RxJS - talks
+# RxJS - talks
 
 - [Slide](http://slides.com/mattiaocchiuto/an-introduction-to-rxjs/live)
 
+## Resources:
 ### Useful links:
 * [Official Rx website](http://reactivex.io/)
 * [RxJS github repo](https://github.com/Reactive-Extensions/RxJS)
