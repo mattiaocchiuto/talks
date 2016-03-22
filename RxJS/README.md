@@ -13,7 +13,7 @@ There are both node and browser examples, in order to try it locally you should 
 7. autocomplete.js _[browser] - a simple autocomplete widget with retry logic_
 
 ## External resources
-### Useful links:
+### Useful links
 * [Official Rx website](http://reactivex.io/)
 * [RxJS github repo](https://github.com/Reactive-Extensions/RxJS)
 * [RxJS getting Started](https://github.com/Reactive-Extensions/RxJS/tree/master/doc/gettingstarted)
