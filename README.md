@@ -2,4 +2,4 @@
 (by [@mattiaoch](https://twitter.com/MattiaOch))
 
 - - -
-- [RxJS](https://github.com/mattiaocchiuto/talks/tree/master/RxJS)
+- [Introduction to RxJS](https://github.com/mattiaocchiuto/talks/tree/master/RxJS)
