@@ -22,7 +22,7 @@ There are both node and browser examples, in order to try it locally you should 
 * [Online ebook](http://xgrommx.github.io/rx-book/index.html)
 * [Marbles diagram](http://rxmarbles.com/)
 
-### Articles & Tutorial
+### Articles & Tutorials
 * [Introduction to Functional Reactive Programming with RxJS](http://www.sitepoint.com/functional-reactive-programming-rxjs/) by @FlorianRappl
 * [The introduction to Reactive Programming you've been missing](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754) by @andrestaltz
 * [Angular — Introduction to Reactive Extensions (RxJS)](https://medium.com/google-developer-experts/angular-introduction-to-reactive-extensions-rxjs-a86a7430a61f#.90u20kh3j) by @gerard.sans
