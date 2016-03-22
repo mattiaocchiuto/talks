@@ -8,9 +8,9 @@ There are both node and browser examples, in order to try it locally you should 
 2. operators.js _[node] - use of combination and filtering operators_
 3. basic-observable-wrap.js _[node] - write your own observable_
 4. ajax-observable-wrap.js _[node] - wrap a service in a observable_
-5. hot-cold.js _[node] - differnce between hot and cold observable_
-6. draggable.js _[browser] - a draggable element made from scratch merging e filtering DOM Observable_
-7. autocomplete.js _[browser] - a simple autocomplete element with retry logic_
+5. hot-cold.js _[node] - difference between hot and cold observable_
+6. draggable.js _[browser] - a draggable element made from scratch merging and filtering DOM Observable_
+7. autocomplete.js _[browser] - a simple autocomplete widget with retry logic_
 
 ## External resources
 ### Useful links:
