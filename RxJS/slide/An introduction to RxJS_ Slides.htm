@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)http://slides.com/mattiaocchiuto/an-introduction-to-rxjs/live#/ -->
+<html class="sl-root decks live live-server mz-applicationcache mz-history mz-localstorage mz-svg mz-opacity mz-rgba mz-backgroundsize mz-cssanimations mz-csstransforms mz-csstransforms3d mz-csstransitions mz-flexbox mz-flexboxlegacy mz-fullscreen loaded ua-mac ua-chrome has-visible-scrollbars fonts-are-ready reveal-is-ready presentation-started"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript" src="./An introduction to RxJS_ Slides_files/4fd2e9786b"></script><script src="./An introduction to RxJS_ Slides_files/nr-892.min.js"></script><script async="" src="./An introduction to RxJS_ Slides_files/analytics.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4fd2e9786b","applicationID":"1563900","transactionName":"cApZREQKWl9XFxZQVlAORB9aDEBW","queueTime":0,"applicationTime":38,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(e,t){return function(){o(e,[(new Date).getTime()].concat(a(arguments)),null,t)}}var o=e("handle"),i=e(2),a=e(3);"undefined"==typeof window.newrelic&&(newrelic=NREUM);var u=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit"],c=["addPageAction"],f="api-";i(u,function(e,t){newrelic[t]=r(f+t,"api")}),i(c,function(e,t){newrelic[t]=r(f+t)}),t.exports=newrelic,newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),o("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(0>o?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?u(e,a,i):i()}function n(n,r,o){e&&e(n,r,o);for(var i=t(o),a=l(n),u=a.length,c=0;u>c;c++)a[c].apply(i,r);var s=f[g[n]];return s&&s.push([m,n,r,i]),i}function p(e,t){w[e]=l(e).concat(t)}function l(e){return w[e]||[]}function d(e){return s[e]=s[e]||o(n)}function v(e,t){c(e,function(e,n){t=t||"feature",g[n]=t,t in f||(f[t]=[])})}var w={},g={},m={on:p,emit:n,get:d,listeners:l,context:t,buffer:v};return m}function i(){return new r}var a="nr@context",u=e("gos"),c=e(2),f={},s={},p=t.exports=o();p.backlog=f},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!w++){var e=v.info=NREUM.info,t=s.getElementsByTagName("script")[0];if(e&&e.licenseKey&&e.applicationID&&t){c(l,function(t,n){e[t]||(e[t]=n)});var n="https"===p.split(":")[0]||e.sslForHttp;v.proto=n?"https://":"http://",u("mark",["onload",a()],null,"api");var r=s.createElement("script");r.src=v.proto+e.agent,t.parentNode.insertBefore(r,t)}}}function o(){"complete"===s.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=window,s=f.document;NREUM.o={ST:setTimeout,XHR:f.XMLHttpRequest,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},e(1);var p=(""+location).split("?")[0],l={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-892.min.js"},d=window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent),v=t.exports={offset:a(),origin:p,features:{},xhrWrappable:d};s.addEventListener?(s.addEventListener("DOMContentLoaded",i,!1),f.addEventListener("load",r,!1)):(s.attachEvent("onreadystatechange",o),f.attachEvent("onload",r)),u("mark",["firstbyte",a()],null,"api");var w=0},{}]},{},["loader"]);</script>
+		<title>An introduction to RxJS: Slides</title>
+		<meta name="description" content="Slides">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<link href="./An introduction to RxJS_ Slides_files/css" rel="stylesheet" type="text/css" data-application-font="opensans">
+		<link href="./An introduction to RxJS_ Slides_files/slides-1df814f963530a8557bab503c81c1049.css" media="all" rel="stylesheet">
+		<link href="./An introduction to RxJS_ Slides_files/application-852ca71eaed2f36ce3b33caca2fb5544.css" media="all" rel="stylesheet">
+		<link href="./An introduction to RxJS_ Slides_files/deck-v2-4b13d0f284961483bc19c312506208d5.css" media="all" rel="stylesheet">
+
+
+
+<style id="user-css-output" type="text/css"></style>
+		<meta content="authenticity_token" name="csrf-param">
+<meta content="6lpu6kyig70nbUtSDzbQVXpg+zci31/6c/Uw+whRJGc=" name="csrf-token">
+		<script type="text/javascript">
+  if( !/dnt=1/.test( window.location.search ) ) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-39670045-1', { 'userId': '472049' });
+    ga('send', 'pageview');
+
+  }
+</script>
+		<!--[if lt IE 9]>
+    <script src="//assets.slid.es/assets/html5shiv-b51d49ab0e89834a02ffce4a59905afb.js"></script>
+<![endif]-->
+	<style type="text/css"></style><style type="text/css"></style><style></style></head>
+	<body data-feedly-mini="yes">
+		<div class="page-loader frozen">
+			<div class="page-loader-inner">
+				<div class="page-loader-spinner"></div>
+				<p class="page-loader-message">Loading deck</p>
+			</div>
+		</div>
+
+		<div class="reveal-viewport theme-font-opensans theme-color-mint-beige">
+			<div class="reveal slide" role="application" data-transition-speed="default" data-background-transition="slide">
+				<div class="slides" style="width: 960px; height: 700px; zoom: 1.23771;">
+					<section data-id="ef30132c9934a89da5e942b3a21ae994" class="present" style="display: block;"><div class="sl-block" data-block-type="text" style="width: 800px; left: 81px; top: 250px; height: auto;" data-block-id="aeb21007aa41a10d05767afe57ed1feb"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>My gentle introduction to RxJS</h1>
+</div></div></section><section data-id="a5becaccf7cf3b4ae443ed0768724d5d" class="future" style="display: block;" hidden="" aria-hidden="true"><div class="sl-block" data-block-type="text" style="width: 800px; left: 79px; top: 50px; height: auto;" data-block-id="21f38c6c5f17b5038ac77964b7b59c9f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>About me</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 191px; height: 191px; left: 384px; top: 150px;" data-block-id="9a36d83f9b85998e4d5755a8c55ac8b4"><div class="sl-block-content" style="z-index: 12; border-style: solid; border-radius: 10px;"><img data-natural-width="239" data-natural-height="239" src="./An introduction to RxJS_ Slides_files/github.jpeg"></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="2bc8aa5d85bbf1f7c083c05235265f33" style="height: auto; min-width: 30px; min-height: 30px; width: 668px; left: 146px; top: 371px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: center;">
+<p>Mattia Occhiuto</p>
+
+<p>&nbsp;</p>
+
+<p>Front-end Software Engineer @ Tuotempo s.r.l.</p>
+
+<p>Twitter &nbsp;@MattiaOch</p>
+
+<p>Github &nbsp;mattiaocchiuto</p>
+</div></div></section><section class="stack future" data-id="09b7b2685928339b6744b095040a0f0a" style="display: block;" data-previous-indexv="0" hidden="" aria-hidden="true"><section data-id="fbe4e80187af9ee44830736541f19704" style="display: none;" class="past" hidden="" aria-hidden="true"><div class="sl-block" data-block-type="text" style="width: 870px; left: 45px; top: 33px; height: auto;" data-block-id="7bac6dfdb30762769a94602c467eb178"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Reactive Systems</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="713a475d8a103b5ed09f38519f557285" style="height: auto; min-width: 30px; min-height: 30px; width: 835px; left: 63px; top: 187px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<p style="text-align:left">&nbsp;</p>
+
+<blockquote>
+<p style="text-align:left">Systems built as Reactive Systems are <span style="color:#FFFF00">more flexible, loosely-coupled and&nbsp;scalable</span>. This makes them easier to develop and amenable to change. They are significantly <span style="color:#FFFF00">more tolerant of failure</span> and when&nbsp;failure&nbsp;does occur they meet it with elegance rather than disaster. Reactive Systems are <span style="color:#FFFF00">highly responsive</span>, giving&nbsp;users&nbsp;effective interactive feedback.</p>
+</blockquote>
+
+<p style="color:rgb(255, 255, 255); text-align:left">&nbsp;</p>
+
+<p style="color:rgb(255, 255, 255); text-align:right">&nbsp;</p>
+
+<p style="color:rgb(255, 255, 255); text-align:right"><span style="font-size:0.9em"><em>from&nbsp;www.reactivemanifesto.org</em></span></p>
+</div></div></section><section data-id="26a298921159b50846a030110b25751f" class="past" style="display: none;" hidden="" aria-hidden="true"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 45px; height: auto;" data-block-id="2f7d3ab456ed43d5a215536f2b90f53b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>So...</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 943px; left: 9px; top: 306px; height: auto;" data-block-id="e4573ece59edf5713ea0d3b691e58d32"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; line-height: 1.56;" data-has-line-height="">
+<ul>
+	<li>
+<strong>Responsive</strong> - <span style="font-size:0.9em">system respond in a timely manner where possible</span>
+</li>
+	<li>
+<strong>Resilient</strong> - <span style="font-size:0.9em">system stays responsive in case of failure</span>
+</li>
+	<li>
+<strong>Elastic</strong> - <span style="font-size:0.9em">scalable</span>
+</li>
+	<li>
+<strong>Message</strong> <strong>driven</strong> - <span style="font-size:0.9em">based on async messages</span>
+</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="fb61ecee2b321e9838a25c176a0d6d49" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 40px; top: 157px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<p style="text-align:left"><span style="font-size:1.0em">Reactive Systems are:</span></p>
+</div></div></section><section data-id="15cb6d701d40f794b6ba34d640f342ae" class="past" style="display: none;" hidden="" aria-hidden="true"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 26px; height: auto;" data-block-id="57794cc7c17d106961bbbd995cdde08e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Reactive Programming</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="eb2ed33d031ae16e1bc847949b70edfb" style="height: auto; min-width: 30px; min-height: 30px; width: 693px; left: 134px; top: 198px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" dir="ui">
+<blockquote>
+<p style="text-align:left">reactive programming&nbsp;is a&nbsp;programming paradigm&nbsp;<span style="color:#FFFF00"><strong>oriented around&nbsp;data flows</strong></span>&nbsp;and the <span style="color:#FFFF00">propagation of change</span>. This means that it should be possible to express static or dynamic data flows with ease in the programming languages used, and that <span style="color:#FFFF00">the underlying execution model will automatically propagate changes through the data flow</span>.</p>
+</blockquote>
+
+<p style="text-align:left">&nbsp;</p>
+
+<p style="text-align:right">&nbsp;</p>
+
+<p style="text-align:right"><span style="font-size:0.9em"><em><span style="color:rgb(255, 255, 255); text-align:left">from wikipedia</span></em></span></p>
+</div></div></section><section data-id="f53a6b9a98022231fd3dc69ef9850228" class="past" style="display: none;" hidden="" aria-hidden="true"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 33px; height: auto;" data-block-id="5b3b180a1a3f87d522240dbf3dfa847b">
+    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>graphically ...</h2>
+</div>
+</div>
+<div class="sl-block" data-block-type="text" style="width: 569px; left: 9px; top: 435px; height: auto;" data-block-id="1f9581d920b41bfe2d3838cc56d2239e">
+    
+    <div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" dir="ui" data-fragment-index="0">
+        <ul>
+            <li style="text-align:left" class="">
+                <strong>using asynchronous data streams</strong>
+            </li>
+            <li style="text-align:left">more declarative</li>
+            <li style="text-align:left">more reusability</li>
+            <li style="text-align:left">more testability</li>
+            <li style="text-align:left">increase&nbsp;separation on concerns</li>
+        </ul>
+    </div>
+</div>
+<div class="sl-block" data-block-type="shape" data-block-id="d676aad4003e1ef60be4305fb28cb4c8" style="min-width: 4px; min-height: 4px; width: 119px; height: 54px; left: 293px; top: 172px;">
+    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(246, 178, 107)" data-shape-stretch="true" style="z-index: 13;">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 119 54"><rect width="119" height="54" class="shape-element" fill="rgb(246, 178, 107)"></rect></svg>
+    </div>
+</div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 119px; height: 54px; left: 552px; top: 172px;" data-block-id="bfc647a63bece0d360ee6adff3da787a">
+    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(118, 165, 175)" data-shape-stretch="true" style="z-index: 14;">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 119 54"><rect width="119" height="54" class="shape-element" fill="rgb(118, 165, 175)"></rect></svg>
+    </div>
+</div>
+<div class="sl-block" data-block-type="text" data-block-id="ba92a2f0a41ad436292f0739cf705c9b" style="height: auto; min-width: 30px; min-height: 30px; width: 99px; left: 303px; top: 180px;">
+    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;">
+        <p>A</p>
+    </div>
+</div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 99px; left: 562px; top: 180px;" data-block-id="a94a7932354ae62149adb467e147dec7">
+    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16;">
+        <p>B</p>
+    </div>
+</div>
+<div class="sl-block" data-block-type="shape" data-block-id="915f9b91db32769d4de1360bc28b4a85" style="min-width: 4px; min-height: 4px; width: 59px; height: 31px; left: 402px; top: 184px;">
+    <div class="sl-block-content" data-shape-type="symbol-thin-arrow-right" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="false" style="z-index: 17;">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="xMidYMid" viewBox="2 4 28 24"><g class="shape-element" fill="rgb(255, 255, 255)"><path d="M19.414 27.414l10-10c0.781-0.781 0.781-2.047 0-2.828l-10-10c-0.781-0.781-2.047-0.781-2.828 0s-0.781 2.047 0 2.828l6.586 6.586h-19.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h19.172l-6.586 6.586c-0.39 0.39-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414c0.781 0.781 2.047 0.781 2.828 0z"></path></g></svg>
+    </div>
+</div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 119px; height: 54px; left: 293px; top: 310px;" data-block-id="f038fa493e1160bbea85c74ced51a2e5">
+    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(246, 178, 107)" data-shape-stretch="true" style="z-index: 18;">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 119 54"><rect width="119" height="54" class="shape-element" fill="rgb(246, 178, 107)"></rect></svg>
+    </div>
+</div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 119px; height: 54px; left: 552px; top: 310px;" data-block-id="508fa55a6e2ca101c28e3300804ac871">
+    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(118, 165, 175)" data-shape-stretch="true" style="z-index: 19;">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 119 54"><rect width="119" height="54" class="shape-element" fill="rgb(118, 165, 175)"></rect></svg>
+    </div>
+</div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 99px; left: 303px; top: 318px;" data-block-id="26ced474e8771829f237dfef9d8a9d18">
+    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 20;">
+        <p>A</p>
+    </div>
+</div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 99px; left: 563px; top: 318px;" data-block-id="7a2db4d3c8a0bb98771d383f093f965e">
+    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 21;">
+        <p>B</p>
+    </div>
+</div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 59px; height: 31px; left: 504px; top: 322px;" data-block-id="c0932d158b448583e36651be48dcd57d">
+    <div class="sl-block-content" data-shape-type="symbol-thin-arrow-right" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="false" style="z-index: 22;">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="xMidYMid" viewBox="2 4 28 24"><g class="shape-element" fill="rgb(255, 255, 255)"><path d="M19.414 27.414l10-10c0.781-0.781 0.781-2.047 0-2.828l-10-10c-0.781-0.781-2.047-0.781-2.828 0s-0.781 2.047 0 2.828l6.586 6.586h-19.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h19.172l-6.586 6.586c-0.39 0.39-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414c0.781 0.781 2.047 0.781 2.828 0z"></path></g></svg>
+    </div>
+</div>
+<div class="sl-block" data-block-type="text" data-block-id="92321163dc50b5be07aad6c065f5e346" style="height: auto; min-width: 30px; min-height: 30px; width: 146px; left: 280px; top: 133px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 23;">
+<p>Proactive</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 146px; left: 533px; top: 133px;" data-block-id="8e963e6c8a2316631a0b9ce98de75cee"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 24;">
+<p>Passive</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 146px; left: 280px; top: 271px;" data-block-id="ea09313e1c8b7bfda079afd52569b995"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 25;">
+<p>Listenable</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 146px; left: 534px; top: 271px;" data-block-id="dd6cfc0218871c312e14f1636302b644"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 26;">
+<p>Reactive</p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="08a4e4cc4af56b4b41ad818ca5fd1fe1" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 353px; top: 381px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 27;">
+<p style="text-align: right;"><span style="font-size:0.9em"><em>From Cycle.js documentation</em></span></p>
+</div></div></section><section data-id="04244d9d6f0c2eedf82a50c973424e50" class="" style="display: block;" aria-hidden="true"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 33px; height: auto;" data-block-id="1c9540ca17914cf8d9c81062e2ea929a"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Why we need it ?</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="3eedf070a30bcfe5baf7ffb6bbadcc11" style="height: auto; min-width: 30px; min-height: 30px; width: 797px; left: 83px; top: 194px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p>Nowadays Modern Web Applications are complex <strong>systems</strong>&nbsp;composed of asynchronous data coming from many different&nbsp;sources:</p>
+
+<p>&nbsp;</p>
+
+<ul>
+	<li>user interaction (DOM-events)</li>
+	<li>AJAX call</li>
+	<li>device event (GPS)</li>
+	<li>web socket</li>
+	<li>web workers</li>
+	<li>reactive user interface (Model/View sync)</li>
+	<li>etc...</li>
+</ul>
+</div></div></section></section><section class="stack future" data-id="1f410d1cc97f5c7ffee9110463fa7c75" style="display: none;" data-previous-indexv="0" hidden="" aria-hidden="true"><section data-id="ab8a15dc9ad3c623ca69f0c82aa73acd" style="display: none;" class="past" hidden="" aria-hidden="true"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="0318b0160f4f6f4054eb4daea97782c1"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>RxJS -&nbsp;The Observables way</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 180px; height: auto;" data-block-id="aa33b7d77775f7aaac861d737b3f5558"><div class="sl-block-content fragment fade-out" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" data-fragment-index="0">
+<p><span style="font-size:1.2em">Iterator</span><span style="color:rgb(255, 255, 255)">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-size:1.2em">+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Observer</span></p>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="8616afe472c6a8c1184a04cbdbc3fc4e" style="min-width: 30px; min-height: 30px; width: 382px; height: 256px; left: 36px; top: 234px;"><div class="sl-block-content fragment fade-out" style="z-index: 13;" data-fragment-index="0"><pre><code class="hljs groovy">var arr = [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>];
+var iter = arr[Symbol.iterator]();
+
+iter.next()
+&gt;   { <span class="hljs-string">value:</span> <span class="hljs-string">'a'</span>, <span class="hljs-string">done:</span> <span class="hljs-literal">false</span> }
+iter.next()
+&gt;   { <span class="hljs-string">value:</span> <span class="hljs-string">'b'</span>, <span class="hljs-string">done:</span> <span class="hljs-literal">false</span> }
+iter.next()
+&gt;   { <span class="hljs-string">value:</span> <span class="hljs-string">'c'</span>, <span class="hljs-string">done:</span> <span class="hljs-literal">false</span> }
+iter.next()
+&gt;   { <span class="hljs-string">value:</span> undefined, <span class="hljs-string">done:</span> <span class="hljs-literal">true</span> }</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="c89effbcecc6ebd4bd83562e12afc02e" style="min-width: 30px; min-height: 30px; width: 453px; height: 87px; left: 500px; top: 234px;"><div class="sl-block-content fragment fade-out" style="z-index: 14;" data-fragment-index="0"><pre><code class="hljs kotlin"><span class="hljs-variable"><span class="hljs-keyword">var</span> el</span> = document.getElementById(<span class="hljs-string">"button"</span>); 
+
+el.addEventListener(<span class="hljs-string">"click"</span>, doSomething); </code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 817px; left: 72px; top: 165px;" data-block-id="3a078410c6a1ce0aded57c3686342608"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;" data-fragment-index="0">
+<p>In short, an&nbsp;<strong>Observable</strong>&nbsp;is an <span style="color:#FFFF00">event stream</span> which can <span style="color:#FFFF00">emit zero or more events</span>, and may or may not finish. If it <span style="color:#FFFF00">finishes</span>, then it does so by either <span style="color:#FFFF00">emitting an error or a</span> special <span style="color:#FFFF00">“complete” event</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="6ea1b7e1c78b070b2a07da823b07930a" style="min-width: 30px; min-height: 30px; width: 608px; height: 309.938px; left: 177px; top: 362px;"><div class="sl-block-content fragment" style="z-index: 16;" data-fragment-index="0"><img data-natural-width="512" data-natural-height="261" src="./An introduction to RxJS_ Slides_files/687474703a2f2f692e696d6775722e636f6d2f634c344d4f73532e706e67.png"></div></div></section><section data-id="9004aaacb69b7fb5cadcd810ebb78692" class="past" style="display: none;" hidden="" aria-hidden="true">
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 24px; height: auto;" data-block-id="9b4358432cc5090b27d687bfbc438db0"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>And What about operators?</h2>
+</div></div>
+
+
+<div class="sl-block" data-block-type="text" data-block-id="00c0a8db7087b3c5630a988201f4ad2c" style="height: auto; min-width: 30px; min-height: 30px; width: 295px; left: 99px; top: 248px;"><div class="sl-block-content fragment fade-out" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" data-fragment-index="0">
+<p style="text-align: left;">Array [1, 2, 3, 4, 5]</p>
+
+<p style="text-align: left;"><span style="font-size:0.7em">&nbsp; .map</span></p>
+
+<p style="text-align: left;"><span style="font-size:0.7em">&nbsp; .filter</span></p>
+
+<p style="text-align: left;"><span style="font-size:0.7em">&nbsp; .reduce</span></p>
+
+<p style="text-align: left;"><span style="font-size:0.7em">&nbsp; .each</span></p>
+
+<p style="text-align: left;"><span style="font-size:0.7em">&nbsp; ...</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 387px; left: 510px; top: 248px;" data-block-id="19d1dd76746bc0527f645cddd2a2baf6"><div class="sl-block-content fragment fade-out" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-fragment-index="0">
+<p style="text-align: left;">Stream {...1..2.....3...4......5..}</p>
+
+<p style="text-align: left;">&nbsp; <span style="font-size:0.7em">.map</span></p>
+
+<p style="text-align: left;"><span style="font-size:0.7em">&nbsp; .filter</span></p>
+
+<p style="text-align: left;"><span style="font-size:0.7em">&nbsp; .reduce</span></p>
+
+<p style="text-align: left;"><span style="font-size:0.7em">&nbsp; .each</span></p>
+
+<p style="text-align: left;"><span style="font-size:0.7em">&nbsp; ...(and &gt; 120 other operators)</span></p>
+
+<p style="text-align: left;">&nbsp;</p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="5658698a1832ca8ddf324cc6be9e1568" style="height: auto; min-width: 30px; min-height: 30px; width: 676px; left: 148px; top: 118px;"><div class="sl-block-content fragment fade-out" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;" data-fragment-index="0">
+<p>Both are collection and both of course has <strong>powerful operators!</strong></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="b0b8c24f2a4f18ac0f22329c40cc4c63" style="min-width: 30px; min-height: 30px; width: 418.003px; height: 587px; left: 255px; top: 98px;"><div class="sl-block-content fragment" style="z-index: 15;" data-fragment-index="0"><img data-natural-width="512" data-natural-height="719" src="./An introduction to RxJS_ Slides_files/687474703a2f2f692e696d6775722e636f6d2f484d47574e4f352e706e67.png"></div></div></section><section data-id="3652e565874a517c37162b5dfcc80f4d" class="past" style="display: none;" hidden="" aria-hidden="true"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 49px; height: auto;" data-block-id="6be658c410c6b74769afa10dc0af6823"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>How they looks like</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 953px; height: 343px; left: 0px; top: 201px;" data-block-id="1c30b8cfb5bd488d4f9b7b5a536f6a98"><div class="sl-block-content" style="z-index: 12;"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> source = Rx.Observable.fromEvent($input, <span class="hljs-string">'keyup'</span>)
+
+<span class="hljs-keyword">var</span> subscription = source.subscribe(
+  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Next: '</span> + x);
+  },
+  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Error: '</span> + e);
+  },
+  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Completed'</span>);
+  }
+);
+
+subscription.dispose();</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="1b4f512c256d9da9b71e9c39d7754942" style="height: auto; min-width: 30px; min-height: 30px; width: 408px; left: 545px; top: 373px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<ul>
+	<li><span style="font-size:0.9em">data pushed</span></li>
+	<li><span style="font-size:0.9em">centralised&nbsp;error handling</span></li>
+	<li><span style="font-size:0.9em">notification on complete</span></li>
+	<li><span style="font-size:0.9em">disposable</span></li>
+</ul>
+</div></div></section><section data-id="06fac73f85140e4ba150f730b3dd04ae" class="past" style="display: none;" hidden="" aria-hidden="true"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="fcfa8d2ff0daa1c8fcfbf4a97ec70662"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Who is the&nbsp;right source?</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 840px; left: 80px; top: 181px; height: auto;" data-block-id="a93d20f676feb2448bb770b589fcb48f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<p style="text-align:left">Easily: everything</p>
+
+<p style="text-align:left">More precisely (?): every data structure or async data source</p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="e971c9419ee7b59b9e50aa6d3a47ab6d" style="min-width: 30px; min-height: 30px; width: 416.59px; height: 385px; left: 261px; top: 315px;"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="422" data-natural-height="390" src="./An introduction to RxJS_ Slides_files/everythingastream.jpeg"></div></div></section><section data-id="1c2d598bff9fe78552646a8499ea33e3" class="" style="display: none;" aria-hidden="true"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="1f8f62216ad8a8c042cb56e870325f5c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>RxJS here we are!</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 204px; height: auto;" data-block-id="02ae8e42c92a15707a96fe005f74c4e6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" data-has-line-height="" style="line-height: 2.6; z-index: 12;">
+<ul>
+	<li>Reactive programming</li>
+	<li class="visible">Events as collection of data</li>
+	<li>Manipulation over Array-like "operators"</li>
+</ul>
+</div></div>
+
+<div class="sl-block" data-block-type="image" data-block-id="ec9ee375fe659738215d26726882fe8e" style="min-width: 30px; min-height: 30px; width: 807.679px; height: 383px; left: 76px; top: 190px;"><div class="sl-block-content fragment" style="z-index: 14;" data-fragment-index="0"><img data-natural-width="717" data-natural-height="340" src="./An introduction to RxJS_ Slides_files/Screen_Shot_2016-03-20_at_20.14.29.png"></div></div></section></section><section data-id="08c9e4926da81b63e913a2e44523b451" class="future" style="display: none;" hidden="" aria-hidden="true"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 313px; height: auto;" data-block-id="79d2ebcb42e68ce853b5bb5de154492c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Let's code!</h2>
+</div></div></section><section data-id="8ca7afd9df9fed7b26bcdac33036dcc7" hidden="" aria-hidden="true" class="future" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="ae950f8693bc701c6bd1db5a2eed09a9"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Conslusion</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="5307fce21ffe9b016d790e36e626658c" style="height: auto; min-width: 30px; min-height: 30px; width: 843px; left: 80px; top: 140px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" dir="ui" data-fragment-index="0">
+<p style="text-align:left"><span style="font-size:1.0em">Pros</span>:</p>
+
+<ul>
+	<li style="text-align:left"><span style="font-size:0.9em">great abstraction for async and events data/operations</span></li>
+	<li style="text-align:left"><span style="font-size:0.9em">easy way to compose async data stream</span></li>
+	<li style="text-align:left"><span style="font-size:0.9em">support for many languages: [Java, .Net, Scala, C#, Clojure, C++, Ruby, Python, Swift, etc..]</span></li>
+	<li style="text-align:left"><span style="font-size:0.9em">performance =&gt; for big array processing, it remove intermediate array allocation</span></li>
+	<li style="text-align:left"><span style="font-size:0.9em">super powerful operators</span></li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="1e04ba5f9cd73293c883e0e5e2efec89" style="height: auto; min-width: 30px; min-height: 30px; width: 683px; left: 180px; top: 210px;"><div class="sl-block-content fragment fade-out" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-fragment-index="0">
+<p style="text-align:left">Cons:</p>
+
+<ul>
+	<li style="text-align:left"><span style="font-size:0.9em">too many operators that can lead to the same results and to remember!</span></li>
+	<li style="text-align:left"><span style="font-size:0.9em">learning curve</span></li>
+	<li style="text-align:left"><span style="font-size:0.9em">not enough examples and tutorial (at least for me)</span></li>
+</ul>
+</div></div></section><section data-id="f840fe6aec7bd764c6a8df57beeb4534" hidden="" aria-hidden="true" class="future" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 800px; left: 88px; top: 70px; height: auto;" data-block-id="4cf3c7ad2b9a0d0cfa3608393fd3fabf"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Questions?</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="5b5b7f7e81b50fa19c7a45b489e16771" style="min-width: 30px; min-height: 30px; width: 643px; height: 273.918px; left: 167px; top: 258px;"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="500" data-natural-height="213" src="./An introduction to RxJS_ Slides_files/1xyjD.gif"></div></div></section><section data-id="99f24b83500b521ba63ab1f1e1083a4e" hidden="" aria-hidden="true" class="future" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="eb2f473c93e43d51bfb2cd6f1b4a02bc"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Thanks!</h1>
+</div></div></section>
+				</div>
+				<div class="dimmer"></div>
+			<div class="backgrounds"><div class="slide-background present" style="display: block;" data-loaded="true"></div><div class="slide-background future" style="display: block;" data-loaded="true"></div><div class="slide-background stack future" data-loaded="true" style="display: block;"><div class="slide-background past" data-loaded="true" style="display: none;"></div><div class="slide-background past" style="display: none;" data-loaded="true"></div><div class="slide-background past" style="display: none;" data-loaded="true"></div><div class="slide-background past" style="display: none;" data-loaded="true"></div><div class="slide-background present" style="display: block;" data-loaded="true"></div></div><div class="slide-background stack future" data-loaded="true" style="display: none;"><div class="slide-background past" data-loaded="true" style="display: none;"></div><div class="slide-background past" data-loaded="true" style="display: none;"></div><div class="slide-background past" style="display: none;" data-loaded="true"></div><div class="slide-background past" style="display: none;" data-loaded="true"></div><div class="slide-background present" style="display: none;" data-loaded="true"></div></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" style="display: none;"></div></div><div class="progress" style="display: block;"><span style="width: 0px;"></span></div><aside class="controls" style="display: block;"><div class="navigate-left"></div><div class="navigate-right enabled"></div><div class="navigate-up"></div><div class="navigate-down"></div></aside><div class="slide-number" style="display: none;"></div><div class="speaker-notes" data-prevent-swipe=""></div><div class="pause-overlay"></div><div id="aria-status-div" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px 1px 1px 1px);">
+My gentle introduction to RxJS
+</div></div>
+		</div>
+
+		
+<script>
+	var SLConfig = {"current_user":{"id":472049,"username":"mattiaocchiuto","name":"mattia occhiuto","description":null,"thumbnail_url":"https://lh5.googleusercontent.com/-4KMSmULwlBU/AAAAAAAAAAI/AAAAAAAAKa4/Br_E9a3cYqc/photo.jpg?sz=50","private_thumbnail_url":"https://lh5.googleusercontent.com/-4KMSmULwlBU/AAAAAAAAAAI/AAAAAAAAKa4/Br_E9a3cYqc/photo.jpg?sz=50","pro":false,"enterprise":false,"enterprise_manager":false,"settings":{"id":313451,"present_controls":true,"present_upsizing":true,"present_notes":true,"editor_grid":true,"editor_snap":true,"developer_mode":true},"registered":true,"email":"occhiutomattia@gmail.com","notify_on_receipt":true,"billing_address":null,"editor_tutorial_completed":true,"manually_upgraded":false},"deck":{"id":641370,"slug":"an-introduction-to-rxjs","title":"An introduction to RxJS","description":"","visibility":"all","published_at":"2016-03-19T16:15:14.176Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/bc94d8507170fb0bee12aeaedb535659/thumb.jpg","view_count":11,"user":{"id":472049,"username":"mattiaocchiuto","name":"mattia occhiuto","description":null,"thumbnail_url":"https://lh5.googleusercontent.com/-4KMSmULwlBU/AAAAAAAAAAI/AAAAAAAAKa4/Br_E9a3cYqc/photo.jpg?sz=50","private_thumbnail_url":"https://lh5.googleusercontent.com/-4KMSmULwlBU/AAAAAAAAAAI/AAAAAAAAKa4/Br_E9a3cYqc/photo.jpg?sz=50","pro":false,"enterprise":false,"enterprise_manager":false,"settings":{"id":313451,"present_controls":true,"present_upsizing":true,"present_notes":true},"registered":true},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"opensans","theme_color":"mint-beige","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"should_loop":false,"share_notes":null,"slide_number":null,"rtl":false,"version":2,"access_token":"tH8yuPaaQXyqPCxSVUHN8qcZ9U8r","notes":{}}};
+</script>
+		<script defer="defer" src="./An introduction to RxJS_ Slides_files/application-9722a784258ef6a3cf7b963e74646676.js"></script>
+		<script defer="defer" src="./An introduction to RxJS_ Slides_files/reveal.min-8273b6fbf9a3777d97df4429f77ba843.js"></script>
+		
+
+	
+
+<script type="text/javascript" src="./An introduction to RxJS_ Slides_files/highlight-9efb98b823ef2e51598faabaa51da5be.js"></script><aside class="presentation-controls"><div class="presentation-controls-content" style="height: 791px;"><h2>Presentation Controls</h2><div class="presentation-controls-section"><h2>Speaker View</h2><p>The control panel for your presentation. Includes speaker notes, an upcoming slide preview and more. It can be used as a remote control when opened from a mobile device. <a href="http://help.slides.com/knowledgebase/articles/333923" target="_blank">Learn more.</a></p><a class="button l outline" href="http://slides.com/mattiaocchiuto/an-introduction-to-rxjs/speaker" target="_blank">Open speaker view</a></div><div class="presentation-controls-section"><h2>Present Live</h2><p class="live-description">Share this link with your audience to have them follow along with the presentation in real-time. <a href="http://help.slides.com/knowledgebase/articles/333924" target="_blank">Learn more.</a></p><div class="live-share"><input class="live-view-url input-field" type="text" value="http://slides.com/mattiaocchiuto/an-introduction-to-rxjs/live" readonly=""></div></div><div class="presentation-controls-section sl-form"><h2>Options</h2><div class="sl-checkbox outline fullscreen-toggle"><input id="fullscreen-checkbox" type="checkbox"><label for="fullscreen-checkbox">Fullscreen</label></div><div class="sl-checkbox outline controls-toggle" data-tooltip="Hide the presentation control arrows and progress bar." data-tooltip-alignment="r" data-tooltip-delay="500" data-tooltip-maxwidth="250"><input id="controls-checkbox" type="checkbox"><label for="controls-checkbox">Hide controls</label></div><div class="sl-checkbox outline notes-toggle" data-tooltip="Hide your speaker notes from the audience." data-tooltip-alignment="r" data-tooltip-delay="500" data-tooltip-maxwidth="250" style="display: none;"><input id="controls-checkbox" type="checkbox"><label for="controls-checkbox">Hide notes</label></div><div class="sl-checkbox outline upsizing-toggle" data-tooltip="Your content is automatically scaled up to fill as much of the browser window as possible. This option disables that scaling and favors the original authored at size." data-tooltip-alignment="r" data-tooltip-delay="500" data-tooltip-maxwidth="300"><input id="upsizing-checkbox" type="checkbox"><label for="upsizing-checkbox">Disable upsizing</label></div></div></div><footer class="presentation-controls-footer"><button class="button xl positive start-presentation">Start presentation</button></footer><div class="sl-scroll-shadow-top" style="height: 10px; opacity: 0; top: 0px;"></div><div class="sl-scroll-shadow-bottom" style="height: 10px; opacity: 0; bottom: 121px;"></div></aside><div id="feedly-mini" title="feedly Mini tookit"></div></body></html>
