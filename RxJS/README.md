@@ -27,4 +27,5 @@ There are both node and browser examples, in order to try it locally you should 
 * [The introduction to Reactive Programming you've been missing](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754) by @andrestaltz
 * [Angular — Introduction to Reactive Extensions (RxJS)](https://medium.com/google-developer-experts/angular-introduction-to-reactive-extensions-rxjs-a86a7430a61f#.90u20kh3j) by @gerard.sans
 * [Learn Rx from Array to Observable](http://reactivex.io/learnrx/) by @jhusain
+* [Cycle.js - Observable](http://cycle.js.org/observables.html)
 * [RxJS lessons at Egghead.io](https://egghead.io/technologies/rx)
