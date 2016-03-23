@@ -7,31 +7,3 @@ Esempi:
 5) hot-cold.js      -> difference between two type of Observable
 6) draggable.js     -> DOM focus
 7) autocomplete.js  -> retry focus
-
-#TODO
-- Metti uno schema murbles
-
-#SLIDE: Hot vs Cold
-Cold observable:
-  - start emitting when a observer subscibe
-  - end emitting when the observe dispose
-  - for each subscriber will be created a new observable
-
-Hot observable:
-  - shared among multiple subscriber
-  - continue emitting value
-  - thin about dom events, no matter if a listener has been attached
-
-
-#SLIDE: Conslusion
-Pros:
-  - great abstraction for asyc and events
-  - support for many languages: [lista di linguaggi supportati]
-  - easy composable => reactive systems
-  - performance => for big array processing, it remove intermediate array allocation
-  - super powerful operators
-
-Cons:
-  - too many operators that can lead to the same results
-  - learning curve
-  - not enough examples and tutorial
