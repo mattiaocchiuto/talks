@@ -1,8 +1,10 @@
-(function (window, $, Rx) {
+(function (scope, $, Rx) {
+  const NETWORK_ON = 'online';
+  const NETWORK_OFF = 'offline';
 
   function searchWikipedia(term) {
-    return () => {
-      return $.ajax({
+    return () =>
+      $.ajax({
         url: 'http://en.wikipedia.org/w/api.php',
         dataType: 'jsonp',
         data: {
@@ -11,69 +13,59 @@
           search: term
         }
       });
-    }
   }
 
   function main() {
-    var $input = $('#textInput');
-    var $results = $('#results');
-    var $networkState = $('.page-header h1');
+    const $input = $('#textInput');
+    const $results = $('#results');
+    const $networkState = $('.page-header h1');
 
-    // ************************
-    // ****** OBSERVABLE ******
-    // ************************
-    var keyup = Rx.Observable.fromEvent($input, 'keyup')
-      .map((e) => {
-        return e.target.value;
-      })
-      .filter((text) => {
-        return text.length > 2;
-      })
+    // ***********************
+    // ****** OBSERVABLE *****
+    // ***********************
+    // Keyup observable
+    const keyup$ = Rx.Observable.fromEvent($input, 'keyup')
+      .map(e => e.target.value)
+      .filter(text => text.length > 2)
       .debounce(200)
       .distinctUntilChanged();
 
-    var networkState = Rx.Observable
+    // Network observable
+    const networkState$ = Rx.Observable
       .merge(
-        Rx.Observable.fromEvent(window, 'online').map(() => true),
-        Rx.Observable.fromEvent(window, 'offline').map(() => false)
+        Rx.Observable.fromEvent(scope, NETWORK_ON).map(() => true),
+        Rx.Observable.fromEvent(scope, NETWORK_OFF).map(() => false)
       )
-      .startWith(navigator.onLine)
-      .share();
+      .startWith(navigator.onLine);
 
-    var searcher = keyup
-      // Come flatMap ma mantiene solo l'ultimo observable.
-      .flatMapLatest((term) => {
-        return Rx.Observable.fromPromise(searchWikipedia(term))
-          .retryWhen((error) => {
-            return navigator.onLine ?
-              Rx.Observable.timer(3000) :
-              networkState;
-          });
-      });
+    const searcher$ = keyup$
+      .flatMapLatest(term =>
+        Rx.Observable.fromPromise(searchWikipedia(term))
+          .retryWhen(error => navigator.onLine ? Rx.Observable.timer(3000) : networkState$)
+      );
 
-    // **********************
-    // ****** OBSERVER ******
-    // **********************
-    networkState.subscribe(
-      (state) => {
+    // ***********************
+    // ****** OBSERVERS ******
+    // ***********************
+    networkState$.subscribe(
+      state =>
         $networkState
           .removeClass()
-          .addClass(state ? 'online' : 'offline');
-      }
+          .addClass(state ? NETWORK_ON : NETWORK_OFF)
     );
 
-    searcher.subscribe(
-      (data) => {
+    searcher$.subscribe(
+      data =>
         $results
           .empty()
-          .append ($.map(data[1], (v) => { return $('<li>').text(v); }));
-      },
-      (error) => {
+          .append ($.map(data[1], v => $('<li>').text(v)))
+      ,
+      error =>
         $results
           .empty()
           .append($('<li>'))
-          .text('Error:' + error);
-      });
+          .text('Error:' + error)
+    );
   }
 
   main();

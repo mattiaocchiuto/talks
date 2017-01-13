@@ -16,7 +16,9 @@ var hotObservable = source.publish();
 hotObservable.connect();
 
 // Primo Subscriber.
-//var subscriptionA = sharedObservable.subscribe(createObserver('A '));
+setTimeout(() => {
+  var subscriptionA = sharedObservable.subscribe(createObserver('A '));
+}, 1000)
 
 // subscriptionA.dispose();
 
@@ -26,7 +28,7 @@ var delayedObservable = Rx.Observable
   .concatMap(hotObservable); 
 
 // Secondo Subscriber.
-var subscriptionB = delayedObservable.subscribe(createObserver('      B '));
+// var subscriptionB = delayedObservable.subscribe(createObserver('      B '));
 
 
 function createObserver(tag) {

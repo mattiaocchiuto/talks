@@ -1,28 +1,26 @@
 var Rx = require('rx');
 
-var array = [1,2,3];
+var source$ = Rx.Observable.fromArray([1,2,3]);
 
-var source = Rx.Observable.fromArray(array);
+var subscription1 = source$.subscribe(
+    (val) => {
+      console.log('Next: ' + val)
+    },
+    (error) => {
+      console.log('Error: ' + x)
+    },
+    () => {
+      console.log('Completed')
+    }
+);
 
-var subscriber = createObserver();
+var subscription2 = source$.subscribe(
+  Rx.Observer.create(
+    x => console.log('Next: ' + x),
+    err => console.log('Error: ' + err),
+    () => console.log('Completed')
+ )
+);
 
-var subscription = source.subscribe(subscriber);
-
-function createObserver(tag) {
- return Rx.Observer.create(
-
-   function (x) {
-     console.log('Next: ' + x);
-   },
-
-   function (err) {
-     console.log('Error: ' + err);
-   },
-
-   function () {
-     console.log('Completed');
-   }
- );
-}
-
-subscription.dispose();
+subscription1.dispose();
+subscription2.dispose();

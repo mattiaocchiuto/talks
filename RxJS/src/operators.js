@@ -13,7 +13,7 @@ var zipSource = Rx.Observable.fromArray(array)
     (first, second) => first
   );
 
-//zipSource.subscribe(createObserver('A'));
+zipSource.subscribe(createObserver('A'));
 
 // ***********************************
 // ************ FLATMAP **************
@@ -26,7 +26,7 @@ var flatMapSource = Rx.Observable.interval(1000).take(5)
       .map((x) => {return index + ' ' + x})
     });
 
-flatMapSource.subscribe(createObserver('A'));
+// flatMapSource.subscribe(createObserver('A'));
 
 // ***********************************
 // ************ CONCATMAP ************
