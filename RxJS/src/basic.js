@@ -14,13 +14,13 @@ var subscription1 = source$.subscribe(
     }
 );
 
-var subscription2 = source$.subscribe(
-  Rx.Observer.create(
-    x => console.log('Next: ' + x),
-    err => console.log('Error: ' + err),
-    () => console.log('Completed')
- )
-);
+// var subscription2 = source$.subscribe(
+//   Rx.Observer.create(
+//     x => console.log('Next: ' + x),
+//     err => console.log('Error: ' + err),
+//     () => console.log('Completed')
+//  )
+// );
 
 subscription1.dispose();
-subscription2.dispose();
+// subscription2.dispose();

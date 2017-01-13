@@ -3,8 +3,7 @@
   const NETWORK_OFF = 'offline';
 
   function searchWikipedia(term) {
-    return () =>
-      $.ajax({
+    return $.ajax({
         url: 'http://en.wikipedia.org/w/api.php',
         dataType: 'jsonp',
         data: {
@@ -23,7 +22,7 @@
     // ***********************
     // ****** OBSERVABLE *****
     // ***********************
-    // Keyup observable
+    // Keyup observable - hot for debug
     const keyup$ = Rx.Observable.fromEvent($input, 'keyup')
       .map(e => e.target.value)
       .filter(text => text.length > 2)
@@ -39,9 +38,9 @@
       .startWith(navigator.onLine);
 
     const searcher$ = keyup$
-      .flatMapLatest(term =>
-        Rx.Observable.fromPromise(searchWikipedia(term))
-          .retryWhen(error => navigator.onLine ? Rx.Observable.timer(3000) : networkState$)
+      .switchMap(term =>
+        Rx.Observable.defer(() => searchWikipedia(term))
+          .retryWhen(error => navigator.onLine ? Rx.Observable.timer(5000) : networkState$)
       );
 
     // ***********************
