@@ -1,10 +1,11 @@
 (function (scope, $, Rx) {
   const NETWORK_ON = 'online';
   const NETWORK_OFF = 'offline';
+  const WIKIPEDIA_API_URL = 'http://en.wikipedia.org/w/api.php';
 
   function searchWikipedia(term) {
     return $.ajax({
-        url: 'http://en.wikipedia.org/w/api.php',
+        url: WIKIPEDIA_API_URL,
         dataType: 'jsonp',
         data: {
           action: 'opensearch',
@@ -23,24 +24,29 @@
     // ****** OBSERVABLE *****
     // ***********************
     // Keyup observable - hot for debug
-    const keyup$ = Rx.Observable.fromEvent($input, 'keyup')
+    const inputKeyup$ = Rx.Observable.fromEvent($input, 'keyup');
+
+    const search$ = inputKeyup$
       .map(e => e.target.value)
       .filter(text => text.length > 2)
-      .debounce(200)
+      .debounceTime(200)
       .distinctUntilChanged();
+
+    const networkOn$ = Rx.Observable.fromEvent(scope, NETWORK_ON).mapTo(true);
+    const networkOff$ = Rx.Observable.fromEvent(scope, NETWORK_OFF).mapTo(false);
 
     // Network observable
     const networkState$ = Rx.Observable
       .merge(
-        Rx.Observable.fromEvent(scope, NETWORK_ON).map(() => true),
-        Rx.Observable.fromEvent(scope, NETWORK_OFF).map(() => false)
+        networkOn$,
+        networkOff$
       )
       .startWith(navigator.onLine);
 
-    const searcher$ = keyup$
+    const searchResult$ = search$
       .switchMap(term =>
         Rx.Observable.defer(() => searchWikipedia(term))
-          .retryWhen(error => navigator.onLine ? Rx.Observable.timer(5000) : networkState$)
+          .retryWhen(error => navigator.onLine ? Rx.Observable.debounceTime(5000) : networkState$)
       );
 
     // ***********************
@@ -53,7 +59,7 @@
           .addClass(state ? NETWORK_ON : NETWORK_OFF)
     );
 
-    searcher$.subscribe(
+    searchResult$.subscribe(
       data =>
         $results
           .empty()

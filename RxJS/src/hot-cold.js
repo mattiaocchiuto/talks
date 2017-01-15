@@ -1,45 +1,31 @@
-var Rx = require('rx');
-
-var source = Rx.Observable
-    .interval(300)
-    .take(5)
-    .map(function (x) {
-      return x + 1
-    });
-
-var coldObservable = source;
-
-var sharedObservable = source.share();
-
-var hotObservable = source.publish();
-// chiamato dopo averlo pubblicato con publish.
-hotObservable.connect();
-
-// Primo Subscriber.
-setTimeout(() => {
-  var subscriptionA = sharedObservable.subscribe(createObserver('A '));
-}, 1000)
-
-// subscriptionA.dispose();
-
-var delayedObservable = Rx.Observable
-  .just(true)
-  .delay(1000)
-  .concatMap(hotObservable); 
-
-// Secondo Subscriber.
-// var subscriptionB = delayedObservable.subscribe(createObserver('      B '));
-
+const Rx = require('rxjs/Rx');
 
 function createObserver(tag) {
-  return Rx.Observer.create(
-    function (x) {
+  return Rx.Subscriber.create(
+    (x) => {
       console.log('Next: ' + tag + x);
     },
-    function (err) {
+    (err) => {
       console.log('Error: ' + err);
     },
-    function () {
+    () => {
       console.log('Completed');
     });
 }
+
+const source = Rx.Observable
+    .interval(300)
+    .take(5)
+    .map(x =>  x + 1);
+
+const coldObservable = source;
+
+const hotObservable = source.publish();
+
+hotObservable.connect();
+
+hotObservable.subscribe(createObserver('First '));
+
+setTimeout(() => {
+  hotObservable.subscribe(createObserver('Second '));
+}, 1000)

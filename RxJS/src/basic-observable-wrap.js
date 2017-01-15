@@ -1,14 +1,14 @@
-var Rx = require('rx');
+var Rx = require('rxjs/Rx');
 
 var source = Rx.Observable.create(function (observer) {
   var id = setTimeout(function () {
     console.log('started');
 
     try {
-      observer.onNext(34);
-      observer.onCompleted();
+      observer.next(34);
+      observer.complete();
     } catch (error) {
-      observer.onError(error);
+      observer.error(error);
     }
   }, 1000);
 
