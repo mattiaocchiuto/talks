@@ -1,8 +1,8 @@
-var Rx = require('rx');
+const Rx = require('rxjs/Rx');
 
-var source$ = Rx.Observable.fromArray([1,2,3]);
+const source$ = Rx.Observable.from([1,2,3]);
 
-var subscription1 = source$.subscribe(
+const subscription1 = source$.subscribe(
     (val) => {
       console.log('Next: ' + val)
     },
@@ -14,13 +14,14 @@ var subscription1 = source$.subscribe(
     }
 );
 
-// var subscription2 = source$.subscribe(
-//   Rx.Observer.create(
-//     x => console.log('Next: ' + x),
-//     err => console.log('Error: ' + err),
-//     () => console.log('Completed')
-//  )
-// );
+const subscription2 = source$.subscribe(
+  {
+    next: x => console.log('Next: ' + x),
+    error: err => console.log('Error: ' + err),
+    complete: () => console.log('Completed')
+  }
+);
 
-subscription1.dispose();
-// subscription2.dispose();
+subscription1.add(subscription2);
+
+subscription1.unsubscribe();

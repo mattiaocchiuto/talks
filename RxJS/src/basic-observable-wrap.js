@@ -1,6 +1,6 @@
 var Rx = require('rxjs/Rx');
 
-var source = Rx.Observable.create(function (observer) {
+var source = Rx.Observable.create(function subscribe(observer) {
   var id = setTimeout(function () {
     console.log('started');
 
@@ -19,13 +19,13 @@ var source = Rx.Observable.create(function (observer) {
 });
 
 var subscription = source.subscribe(
-  function (x) {
+  (x) => {
     console.log('Next: ' + x);
   },
-  function (e) {
+  (e) => {
     console.log('Error: ' + e);
   },
-  function () {
+  () => {
     console.log('Completed');
   }
 );
